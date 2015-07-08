@@ -1,0 +1,11 @@
+configuration: Release
+branches:
+  only:
+    - master
+
+before_build:
+  - nuget restore EntityFramework.InterceptorEx.sln
+
+build:
+  project: EntityFramework.InterceptorEx.sln       
+  verbosity: minimal
