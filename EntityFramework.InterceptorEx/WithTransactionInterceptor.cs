@@ -42,9 +42,13 @@ namespace EntityFramework.InterceptorEx
         {
             if (!Suppress)
             {
-                var rnd = Guid.NewGuid().ToString("N");
-                command.CommandText = String.Format(Wrapped_Query_Tpl, command.CommandText, rnd, rnd);
-                CommandText = command.CommandText;
+
+                if (!command.CommandText.TrimStart().StartsWith("DECLARE @v"))
+                {
+                    var rnd = Guid.NewGuid().ToString("N");
+                    command.CommandText = String.Format(Wrapped_Query_Tpl, command.CommandText, rnd, rnd);
+                    CommandText = command.CommandText;
+                }
             }
         }
     }
