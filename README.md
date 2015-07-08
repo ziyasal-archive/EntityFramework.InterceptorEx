@@ -1,8 +1,6 @@
 # Jexpr  
 
-:warning::warning::warning: _It requires a lot of code refactoring to use in production_
-
-
+:warning::warning::warning: _It requires more tests_
 
 **INTRODUCTION**
 - [WithNoLockInterceptor](#nolock-interceptor)
