@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EntityFramework.InterceptorEx</id>
+    <version>1.0.0</version>
+    <title>EntityFramework.InterceptorEx</title>
+    <authors>Ziya SARIKAYA</authors>
+    <owners>ziyasal</owners>
+    <licenseUrl>https://github.com/ziyasal/Httwrap/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ziyasal/Httwrap</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Useful EF interceptors (nolock, transaction ..)
+    </description>
+    <summary> Useful EF interceptors (nolock, transaction ..)</summary>
+    <tags>ef interceptor nolock transaction</tags>
+    <copyright />
+    <dependencies>
+      <dependency id="EntityFramework" version="6.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\EntityFramework.InterceptorEx.dll" target="lib\net45\EntityFramework.InterceptorEx.dll" />
+  </files>
+</package>
