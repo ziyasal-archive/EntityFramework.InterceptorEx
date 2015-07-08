@@ -7,18 +7,18 @@ namespace EntityFramework.InterceptorEx
     public class WithTransactionInterceptor : DbCommandInterceptor
     {
         private static string Wrapped_Query_Tpl = @"
-                            DECLARE @p{1} INT
+                            DECLARE @v{1} INT
 
                             BEGIN TRAN
                                
                                 {0}
 
-                                SELECT @p{1} = @@ERROR
-                                IF (@p{1} <> 0) GOTO ERR_HANDLE_BLOCK
+                                SELECT @v{1} = @@ERROR
+                                IF (@v{1} <> 0) GOTO ERR_{2}
                             COMMIT TRAN
 
-                            ERR_HANDLE_BLOCK:
-                                IF (@p{1} <> 0) BEGIN
+                            ERR_{2}:
+                                IF (@v{1} <> 0) BEGIN
                                     ROLLBACK TRAN
                             END";
 
@@ -32,7 +32,8 @@ namespace EntityFramework.InterceptorEx
         {
             if (!Suppress)
             {
-                command.CommandText = String.Format(Wrapped_Query_Tpl, command.CommandText, GetTimestamp(DateTime.Now));
+                var rnd = Guid.NewGuid().ToString("N");
+                command.CommandText = String.Format(Wrapped_Query_Tpl, command.CommandText, rnd, rnd);
                 CommandText = command.CommandText;
             }
         }
@@ -41,14 +42,10 @@ namespace EntityFramework.InterceptorEx
         {
             if (!Suppress)
             {
-                command.CommandText = String.Format(Wrapped_Query_Tpl, command.CommandText);
+                var rnd = Guid.NewGuid().ToString("N");
+                command.CommandText = String.Format(Wrapped_Query_Tpl, command.CommandText, rnd, rnd);
                 CommandText = command.CommandText;
             }
-        }
-
-        private static String GetTimestamp(DateTime value)
-        {
-            return value.ToString("yyyyMMddHHmmssffff");
         }
     }
 }
