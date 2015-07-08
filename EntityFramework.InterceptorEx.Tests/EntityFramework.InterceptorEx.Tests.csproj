@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BloggingContext.cs" />
+    <Compile Include="GlobalSetup.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NolockInterceptorTests.cs" />
     <Compile Include="Post.cs" />
