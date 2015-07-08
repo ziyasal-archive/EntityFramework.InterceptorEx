@@ -1,4 +1,6 @@
-# Jexpr  
+# EntityFramework.InterceptorEx
+
+[![Build status](https://ci.appveyor.com/api/projects/status/6qpi6het0ve74m0t/branch/master?svg=true)](https://ci.appveyor.com/project/ziyasal/entityframework-interceptorex/branch/master)
 
 :warning::warning::warning: _It requires more tests_
 
