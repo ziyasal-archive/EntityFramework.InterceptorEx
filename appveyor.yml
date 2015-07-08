@@ -1,4 +1,6 @@
 configuration: Release
+services:
+  - mssql2008r2sp2
 branches:
   only:
     - master
