@@ -26,7 +26,9 @@ string sql = WithNoLockInterceptor.CommandText
 
 Sample Sql Query Output
 ```sql
-SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]  FROM [dbo].[Blogs] AS [Extent1] WITH (NOLOCK)  WHERE [Extent1].[Name] LIKE N'Lo%'
+SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]  
+       FROM [dbo].[Blogs] AS [Extent1] WITH (NOLOCK)  
+       WHERE [Extent1].[Name] LIKE N'Lo%'
 ```
 
 ## Transaction Interceptor
@@ -46,7 +48,9 @@ DECLARE @errorCode INT
 
 BEGIN TRAN
 
-SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]  FROM [dbo].[Blogs] AS [Extent1] WITH (NOLOCK)  WHERE [Extent1].[Name] LIKE N'Lo%'
+SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]  
+       FROM [dbo].[Blogs] AS [Extent1] WITH (NOLOCK)  
+       WHERE [Extent1].[Name] LIKE N'Lo%'
 
 SELECT
 	@errorCode = @@ERROR
