@@ -8,6 +8,11 @@
 - [WithNoLockInterceptor](#nolock-interceptor)
 - [WithTransactionInterceptor](#transaction-interceptor)
 
+## To Install
+```sh
+Install-Package EntityFramework.InterceptorEx
+```
+
 ## NoLock Interceptor
 
 To Register
