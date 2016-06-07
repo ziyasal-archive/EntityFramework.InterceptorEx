@@ -8,7 +8,7 @@
 - [WithNoLockInterceptor](#nolock-interceptor)
 - [WithTransactionInterceptor](#transaction-interceptor)
 
-## To Install
+## To Install via NuGet
 ```sh
 Install-Package EntityFramework.InterceptorEx
 ```
