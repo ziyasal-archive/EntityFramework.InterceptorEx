@@ -17,7 +17,10 @@ Install-Package EntityFramework.InterceptorEx
 
 To Register
 ```csharp
-DbInterception.Add(new WithNoLockInterceptor());
+static DbContextConstructor()
+{
+    DbInterception.Add(new WithNoLockInterceptor());
+}
 ```
 
 To Disable
@@ -40,7 +43,10 @@ SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]
 
 To Register
 ```csharp
-DbInterception.Add(new WithTransactionInterceptor());
+static DbContextConstructor()
+{
+    DbInterception.Add(new WithTransactionInterceptor());
+}
 ```
 
 To Disable
