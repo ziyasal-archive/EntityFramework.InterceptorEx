@@ -15,7 +15,7 @@ Install-Package EntityFramework.InterceptorEx
 
 ## NoLock Interceptor
 
-To Register
+### To Register
 ```csharp
 static DbContextConstructor()
 {
@@ -23,16 +23,16 @@ static DbContextConstructor()
 }
 ```
 
-To Disable
+### To Disable
 ```csharp
 WithNoLockInterceptor.Suppress = true;
 ```
-To Debug Sql Query
+### To Debug Sql Query
 ```csharp
 string sql = WithNoLockInterceptor.CommandText
 ```
 
-Sample Sql Query Output
+### Sample Sql Query Output
 ```sql
 SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]  
        FROM [dbo].[Blogs] AS [Extent1] WITH (NOLOCK)  
@@ -41,7 +41,7 @@ SELECT [Extent1].[BlogId] AS [BlogId], [Extent1].[Name] AS [Name]
 
 ## Transaction Interceptor
 
-To Register
+### To Register
 ```csharp
 static DbContextConstructor()
 {
@@ -49,7 +49,7 @@ static DbContextConstructor()
 }
 ```
 
-To Disable
+### To Disable
 ```csharp
 WithTransactionInterceptor.Suppress = true;
 ```
@@ -73,12 +73,12 @@ SELECT
 END
 ```
 
-##Bugs
+## Bugs
 If you encounter a bug, performance issue, or malfunction, please add an [Issue](https://github.com/ziyasal/EntityFramework.InterceptorEx/issues) with steps on how to reproduce the problem.
 
-##TODO
+## TODO
 - Add more tests
 - Add more documentation
 
-##License
+## License
 Code and documentation are available according to the *MIT* License (see [LICENSE](https://github.com/ziyasal/EntityFramework.InterceptorEx/blob/master/LICENSE)).
